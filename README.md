@@ -8,8 +8,10 @@ Data Structures and Algorithms library in TypeScript
 
 - [ ] Node
 - [ ] LinkList
+- [ ] DoublyLinkedList
 - [ ] Stack
 - [ ] Queue
+- [ ] PriorityQueue
 - [ ] Heap
 - [ ] HashTable
 - [ ] Tree
@@ -39,3 +41,5 @@ Data Structures and Algorithms library in TypeScript
 2. https://github.com/google/closure-library
 3. https://github.com/loiane/javascript-datastructures-algorithms
 4. https://github.com/jeffzh4ng/iruka
+5. https://github.com/trekhleb/javascript-algorithms
+6. https://github.com/Crizstian/data-structure-and-algorithms-with-ES6
