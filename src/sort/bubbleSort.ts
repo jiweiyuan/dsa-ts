@@ -3,7 +3,7 @@
  * @param arr
  */
 
-export function bubbleSort<T>(arr: Array<T>): Array<T> {
+export function bubbleSort(arr: Array<number>): Array<number> {
 
   const len = arr.length
 
@@ -16,5 +16,6 @@ export function bubbleSort<T>(arr: Array<T>): Array<T> {
       }
     }
   }
+
   return arr
 }
