@@ -43,3 +43,5 @@ Data Structures and Algorithms library in TypeScript
 4. https://github.com/jeffzh4ng/iruka
 5. https://github.com/trekhleb/javascript-algorithms
 6. https://github.com/Crizstian/data-structure-and-algorithms-with-ES6
+
+- [hustcc: 十大经典排序算法](https://sort.hust.cc/)
