@@ -1,5 +1,5 @@
 export interface Stack<Item> {
-  push(item: Item): void;
+  push(item: Item): number;
   pop(): Item | undefined;
   isEmpty(): boolean;
   peek(): Item | undefined;

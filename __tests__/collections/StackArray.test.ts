@@ -13,11 +13,11 @@ describe('StackArray', () => {
   })
 
   it('pushes element', () => {
-    stack.push(1)
+    expect(stack.push(1)).toEqual(1)
     expect(stack.isEmpty()).toEqual(false)
     expect(stack.length).toEqual(1)
 
-    stack.push(2)
+    expect(stack.push(2)).toEqual(2)
     expect(stack.isEmpty()).toEqual(false)
     expect(stack.length).toEqual(2)
   })

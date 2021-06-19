@@ -5,19 +5,19 @@
 
 
 import { Stack } from './Stack'
-// TODO: any type ?
-export class StackArray<Item> implements Stack<any>{
+// TODO: do you understand Stack generic Item?
+export class StackArray<Item> implements Stack<Item> {
   private items: Item[]
   constructor(iterable?: Iterable<Item>) {
     this.items = iterable ? [...iterable] : []
   }
 
-  push(item: Item) {
+  push(item: Item): number {
     return this.items.push(item)
   }
 
   pop(): Item | undefined {
-    return  this.items.pop()
+    return this.items.pop()
   }
 
   peek(): Item | undefined {
@@ -32,7 +32,7 @@ export class StackArray<Item> implements Stack<any>{
     this.items = []
   }
 
-  get length() {
+  get length(): number {
     return this.items.length
   }
 }
