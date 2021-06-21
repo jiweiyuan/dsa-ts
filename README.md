@@ -2,15 +2,22 @@
 
 Data Structures and Algorithms library in TypeScript
 
-## Plan
-
 #### Data Structures
 
-- [ ] Node
-- [ ] LinkList
-- [ ] DoublyLinkedList
-- [ ] Stack
+**interface** and *class or function implement*
+
+- [ ] **Position**
+    - [ ] *SLNode*, Singly LinkedList Node
+    - [ ] *DLNode*, Doubly LinkedList Node
+- [ ] **LinkList**
+    - [ ] *SinglyLinkedList*, using SLNode
+    - [ ] *DoublyLinkedList*, using DLNode
+- [ ] **Stack**
+    - [x] *StackArray*, using native Array
+    - [ ] *StackList*, using SinglyLinkedList
 - [ ] Queue
+    - [ ] *QueueArray* using native Array
+    - [ ] *QueueList* using SinglyLinkedList
 - [ ] PriorityQueue
 - [ ] Heap
 - [ ] HashTable
