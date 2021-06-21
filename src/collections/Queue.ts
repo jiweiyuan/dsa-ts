@@ -8,19 +8,20 @@ export interface Queue<Item> {
   /**
    * Puts the specified item on this queue.
    * @param item The item to be added the queue.
+   * @return {number} The number of elements in this queue.
    */
   enqueue(item: Item): number;
 
   /**
    * Retrieves and removes the head of this queue.
-   * @return Item The item at the head of this queue. Returns undefined if the
+   * @return {Item} The item at the head of this queue. Returns undefined if the
    *     queue is empty.
    */
   dequeue(): Item | undefined;
 
   /**
-   * Retrieves but not remove the head of this queue.
-   * @return Item The element at the head of this queue. Return undefined if the
+   * Retrieves but does not remove the head of this queue.
+   * @return Item The element at the head of this queue. Returns undefined if the
    *    queue is empty
    */
   peek(): Item | undefined;
