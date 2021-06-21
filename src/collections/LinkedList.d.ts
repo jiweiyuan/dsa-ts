@@ -1,20 +1,25 @@
+import { Position } from './Position';
 
-export interface List<E> {
-  add(value: E): number;
-  add(index: number, value: E): number
+export interface LinkedList<E> {
+  add(value: E): number
   addFirst?(): number
   addLast?(): number
-  get(index: number): E
+  insert?(index: number, value: E): number
+
+  get?(index: number): E
   getFirst?(): E
   getLast?(): E
   peek?(): E
   peekFirst?(): E
   peekLast?(): E
-  indexOf(E): number
-  clear(): void
+
+  indexOf?(E): number
+  clear?(): void
   remove?(value: E)
+  removeFirst?(): E | undefined
+  removeLast?(): E | undefined
   removeAt?(index: number): E
-  readonly length: number
-  head?: E
-  tail?: E
+  get length(): number
+  head?: Position<E> | undefined
+  tail?: Position<E> | undefined
 }

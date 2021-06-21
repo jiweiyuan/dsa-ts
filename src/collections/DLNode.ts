@@ -1,8 +1,10 @@
-export default class LinkedListNode<T> {
+import { Position } from './Position';
+
+export default class DLNode<T> implements Position<T>{
 
   value: T | undefined
-  next: LinkedListNode<T> | undefined
-  prev: LinkedListNode<T> | undefined
+  next: DLNode<T> | undefined
+  prev: DLNode<T> | undefined
 
   constructor(value?: T) {
     this.value = (typeof value !== 'undefined') ? value : undefined
