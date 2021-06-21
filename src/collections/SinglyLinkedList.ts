@@ -35,6 +35,13 @@ export default class SinglyLinkedList<E> implements LinkedList<E>{
     this.size++
     return this.size
   }
+  getFirst(): E {
+    return this.head && this.head.value
+  }
+
+  getLast(): E {
+    return this.tail && this.head.value
+  }
 
   get length(): number {
     return this.size

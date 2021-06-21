@@ -13,13 +13,11 @@ export interface LinkedList<E> {
   peekFirst?(): E
   peekLast?(): E
 
-  indexOf?(E): number
+  indexOf?(value: E): number
   clear?(): void
   remove?(value: E)
   removeFirst?(): E | undefined
   removeLast?(): E | undefined
   removeAt?(index: number): E
   get length(): number
-  head?: Position<E> | undefined
-  tail?: Position<E> | undefined
 }
