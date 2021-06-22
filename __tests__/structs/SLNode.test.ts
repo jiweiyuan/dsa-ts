@@ -8,7 +8,7 @@ describe('SLNode: Singly LinkedList Node',() => {
     node = new SLNode()
   })
 
-  it('construct', () => {
+  it('constructor', () => {
     expect(node.value).toEqual(undefined)
     expect(node.next).toEqual(undefined)
     const node1 = new SLNode('a')
