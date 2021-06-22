@@ -1,4 +1,4 @@
-import QueueArray from '../../src/collections/QueueArray';
+import QueueArray from '../../src/structs/QueueArray';
 
 describe('QueueArray', () => {
   let queue: QueueArray<number>

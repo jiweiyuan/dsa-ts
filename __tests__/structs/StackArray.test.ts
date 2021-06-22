@@ -1,4 +1,4 @@
-import { StackArray } from '../../src/collections/StackArray';
+import { StackArray } from '../../src/structs/StackArray';
 
 describe('StackArray', () => {
   let stack: StackArray<number>
