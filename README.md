@@ -71,5 +71,6 @@ npm run test
 6. https://github.com/Crizstian/data-structure-and-algorithms-with-ES6
 7. https://github.com/jonschlinkert/array-sort
 8. https://github.com/DefinitelyTyped/DefinitelyTyped
+9. https://github.com/lemire/FastPriorityQueue.js
 
 - [hustcc: 十大经典排序算法](https://sort.hust.cc/)
