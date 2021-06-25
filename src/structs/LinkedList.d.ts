@@ -1,4 +1,3 @@
-import { Position } from './Position';
 
 export interface LinkedList<E> {
   add(value: E): number

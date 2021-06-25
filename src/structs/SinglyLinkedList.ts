@@ -69,7 +69,7 @@ export default class SinglyLinkedList<E> implements LinkedList<E>{
     return this.tail && this.tail.value
   }
 
-  clear() {
+  clear(): void {
     this.head = this.tail = undefined
     this.size = 0
   }

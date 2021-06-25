@@ -1,10 +1,10 @@
-import StackArray from '../../src/structs/StackArray';
+import StackList from '../../src/structs/StackList';
 
-describe('StackArray', () => {
-  let stack: StackArray<number>
+describe('StackList', () => {
+  let stack: StackList<number>
 
   beforeEach(() => {
-    stack = new StackArray<number>()
+    stack = new StackList<number>()
   })
 
   it('starts empty', () => {
@@ -44,23 +44,13 @@ describe('StackArray', () => {
     expect(stack.peek()).toEqual(2)
   })
 
-  it('clears the stack', () => {
-    stack.clear()
-    expect(stack.isEmpty()).toEqual(true)
-    stack.push(1)
-    stack.push(2)
-    stack.clear()
-    expect(stack.isEmpty()).toEqual(true)
-  })
+  it('construct from a iterable Object', () => {
+    const stack: StackList<number> = new StackList([1, 2, 3])
 
-  it('construct', () => {
-    expect(stack.isEmpty()).toEqual(true)
-
-    const stackFromArray: StackArray<number> = new StackArray([1, 2, 3])
-    expect(stackFromArray.isEmpty()).toEqual(false)
-    expect(stackFromArray.length).toEqual(3)
-    expect(stackFromArray.pop()).toEqual(3)
-    expect(stackFromArray.pop()).toEqual(2)
-    expect(stackFromArray.pop()).toEqual(1)
+    expect(stack.isEmpty()).toEqual(false)
+    expect(stack.length).toEqual(3)
+    expect(stack.pop()).toEqual(3)
+    expect(stack.pop()).toEqual(2)
+    expect(stack.pop()).toEqual(1)
   })
 })

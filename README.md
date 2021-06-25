@@ -6,11 +6,11 @@ Data Structures and Algorithms library in TypeScript
 
 **interface** and *class or function implement*
 
-- [ ] **Position**
-    - [ ] *SLNode*, Singly LinkedList Node
-    - [ ] *DLNode*, Doubly LinkedList Node
+- [x] **Position**
+    - [x] *SLNode*, Singly LinkedList Node
+    - [x] *DLNode*, Doubly LinkedList Node
 - [ ] **LinkList**
-    - [ ] *SinglyLinkedList*, using SLNode
+    - [x] *SinglyLinkedList*, using SLNode
     - [ ] *DoublyLinkedList*, using DLNode
 - [ ] **Stack**
     - [x] *StackArray*, using native Array
@@ -40,6 +40,9 @@ Data Structures and Algorithms library in TypeScript
 - [ ] bfs
 - [ ] df
 - [ ] greedy
+
+## Install
+
 
 
 ## Reference

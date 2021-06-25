@@ -4,27 +4,27 @@
  * Reference:
  * 1.https://github.com/google/closure-library/blob/master/closure/goog/structs/queue.js
  */
-export interface Queue<Item> {
+export interface Queue<E> {
   /**
-   * Puts the specified item on this queue.
-   * @param item The item to be added the queue.
+   * Puts the specified element on this queue.
+   * @param item The element to be added the queue.
    * @return {number} The number of elements in this queue.
    */
-  enqueue(item: Item): number;
+  enqueue(item: E): number;
 
   /**
    * Retrieves and removes the head of this queue.
-   * @return {Item} The item at the head of this queue. Returns undefined if the
+   * @return {E} The element at the head of this queue. Returns undefined if the
    *     queue is empty.
    */
-  dequeue(): Item | undefined;
+  dequeue(): E | undefined;
 
   /**
    * Retrieves but does not remove the head of this queue.
-   * @return Item The element at the head of this queue. Returns undefined if the
+   * @return E The element at the head of this queue. Returns undefined if the
    *    queue is empty
    */
-  peek(): Item | undefined;
+  peek(): E | undefined;
 
   /**
    * Returns the number of elements in this queue.
