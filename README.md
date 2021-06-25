@@ -2,6 +2,8 @@
 
 Data Structures and Algorithms library in TypeScript
 
+## Plan
+
 #### Data Structures
 
 **interface** and *class or function implement*
@@ -51,6 +53,11 @@ Data Structures and Algorithms library in TypeScript
 - [ ] greedy
 
 ## Install
+
+```bash
+npm install
+npm run test
+```
 
 
 
