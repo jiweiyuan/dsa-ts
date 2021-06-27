@@ -14,20 +14,23 @@ Data Structures and Algorithms library in TypeScript
   
 - [x] **LinkedList**
     - [x] *SinglyLinkedList*, using SLNode
-    - [x] *DoublyLinkedList*, using DLNode
+    - [ ] *DoublyLinkedList*, using DLNode
+  
+- [ ] **List**
+  - [ ] *DoublyLinkedList*, using DLNode
+  
+- [x] **Iterator**
+  - [x] *DoublyLinkedList*, using DLNode
+  
 - [x] **Stack**
     - [x] *StackArray*, using native Array
     - [x] *StackList*, using SinglyLinkedList
+  
 - [x] **Queue**
     - [x] *QueueArray* using native Array
     - [x] *QueueList* using SinglyLinkedList
     - [x] *DequeList* using DoublyLinkedList
-- [ ] **List**
-  - [ ] *DoublyLinkedList*, using DLNode
-- [ ] **Sequence**
-  - [ ] *DoublyLinkedList*, using DLNode
-- [ ] **Iterator**
-  - [ ] *DoublyLinkedList*, using DLNode
+
   
 - [ ] PriorityQueue
 - [ ] Heap

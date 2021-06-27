@@ -1,3 +1,4 @@
+import {Position} from './Position';
 
 export interface LinkedList<E> {
   /**
@@ -37,10 +38,8 @@ export interface LinkedList<E> {
    */
   getLast(): E
 
-  indexOf?(value: E): number
-  clear?(): void
-  remove?(value: E)
 
+  clear?(): void
   /**
    * Removes the element at the front of the LinkedList.
    * @return {*} The element at the front of the LinkedList.
@@ -52,7 +51,13 @@ export interface LinkedList<E> {
    * @return {*} The element at the end of the LinkedList.
    */
   removeLast(): E | undefined
-  removeAt?(index: number): E
+
+  removePosition?(p: Position<E>): Position<E>
+  replacePosition?(p: Position<E>): Position<E>
+  insertBefore?(p: Position<E>): LinkedList<E>
+  insertAfter?(p:Position<E>): LinkedList<E>
+  findPositionIndex? (p: Position<E>): number
+  getPosition?(index: number): Position<E>
 
   /**
    * Gets the length of the LinkedList

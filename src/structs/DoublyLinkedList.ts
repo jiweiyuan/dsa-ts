@@ -1,7 +1,11 @@
 import DLNode from './DLNode';
 import { LinkedList } from './LinkedList';
+import { Iterable } from './Iterable';
 
-export default class DoublyLinkedList<E> implements LinkedList<E> {
+/**
+ * Linked
+ */
+export default class DoublyLinkedList<E> implements LinkedList<E>, Iterable<E>{
   private dummyHead: DLNode<E>
   private dummyTail: DLNode<E>
   private size: number
@@ -99,5 +103,15 @@ export default class DoublyLinkedList<E> implements LinkedList<E> {
 
   get length():number {
     return this.size
+  }
+
+  *[Symbol.iterator]():IterableIterator<E> {
+
+    let current = this.dummyHead
+
+    while (current.next !== this.dummyTail) {
+      yield current.next.value
+      current = current.next
+    }
   }
 }

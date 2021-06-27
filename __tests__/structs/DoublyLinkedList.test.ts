@@ -64,4 +64,14 @@ describe('DoublyLinkedList', () => {
     expect(list.isEmpty()).toBeTruthy()
     expect(list.removeLast()).toBeUndefined()
   })
+
+  it('can be iterable', () => {
+    const list = new DoublyLinkedList(['a', 'b', 'c'])
+
+    const result = []
+    for (const value of list) {
+      result.push(value)
+    }
+    expect(result).toEqual(['a', 'b', 'c'])
+  })
 })
