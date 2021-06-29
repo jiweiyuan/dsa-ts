@@ -4,6 +4,8 @@ import { Iterable } from './Iterable';
 
 /**
  * Linked
+ * Reference:
+ * 1.https://github.com/tuelsch/ts-linked-list/blob/master/src/LinkedList.ts
  */
 export default class DoublyLinkedList<E> implements LinkedList<E>, Iterable<E>{
   private dummyHead: DLNode<E>

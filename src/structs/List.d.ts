@@ -16,6 +16,6 @@ export interface List<E> {
   sort?(fn: Comparator<E>):void
   reverse?(): List<E>
   forEach?(): void
-  map(fn: () => unknown): List<never>
+  map(fn: () => unknown): List<unknown>
   reduce?(): unknown
 }

@@ -31,6 +31,9 @@ Data Structures and Algorithms library in TypeScript
     - [x] *QueueList* using SinglyLinkedList
     - [x] *DequeList* using DoublyLinkedList
 
+- [ ] **Tree**
+  - [ ] TreeLinkedList
+  - [ ] TreeArray
   
 - [ ] PriorityQueue
 - [ ] Heap
@@ -75,5 +78,6 @@ npm run test
 7. https://github.com/jonschlinkert/array-sort
 8. https://github.com/DefinitelyTyped/DefinitelyTyped
 9. https://github.com/lemire/FastPriorityQueue.js
+10.https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 
 - [hustcc: 十大经典排序算法](https://sort.hust.cc/)
