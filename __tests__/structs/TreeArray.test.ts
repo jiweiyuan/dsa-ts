@@ -9,14 +9,22 @@ describe('TreeArray', () => {
   let sibling: TreeArray<number>
 
   beforeEach(() => {
+    /**
+     * To Create a tree! Follow is Result:
+     *          parent
+     *          /   \
+     *        tree   sibling
+     *     /   |   \
+     * tree1 tree2 tree3
+     */
     parent = new TreeArray(0)
-
     tree1 = new TreeArray(11)
     tree2 = new TreeArray(12)
     tree3 = new TreeArray(13)
     sibling = new TreeArray(2)
     tree = new TreeArray(1, parent, [tree1, tree2, tree3])
     parent.addChild(sibling)
+
   })
 
   it('constructor', () => {
@@ -52,9 +60,28 @@ describe('TreeArray', () => {
     expect(tree.contains(tree2)).toBeFalsy()
     expect(tree1.getNextSibling()).toEqual(tree3)
   })
+
   it('getSize', () => {
     // let tree11 = new TreeArray(11)
     expect(parent.getSize()).toBe(6)
+  });
+
+  it('getHeight', () => {
+    expect(parent.getHeight()).toBe(3)
+  })
+
+  it('getDepth', () => {
+    expect(parent.getDepth()).toBe(1)
+    expect(tree.getDepth()).toBe(2)
+    expect(tree1.getDepth()).toBe(3)
+  })
+
+  it('traversal', () => {
+    const postOrderResult = [tree1, tree2, tree3, tree, sibling, parent]
+    const preOrderResult = [parent, tree, tree1, tree2, tree3, sibling]
+    // const levelOrderResult = [parent, tree, sibling, tree1, tree2, tree3]
+    expect(parent.postOrderTraversal()).toEqual(postOrderResult)
+    expect(parent.preOrderTraversal()).toEqual(preOrderResult)
   });
 
 

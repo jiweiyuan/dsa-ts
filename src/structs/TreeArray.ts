@@ -87,10 +87,10 @@ export default class TreeArray<E> implements Tree<E> {
 
   getSize(): number {
     let size = 0
-    const _traverse = (item: Tree<E>): void => {
+    const _traverse = (tree: Tree<E>): void => {
       ++size
-      if(Array.isArray(item.children)) {
-        item.children.forEach(item => {
+      if(Array.isArray(tree.children)) {
+        tree.children.forEach(item => {
           _traverse(item)
         })
       }
@@ -98,6 +98,67 @@ export default class TreeArray<E> implements Tree<E> {
     _traverse(this)
     return size
   }
+
+  getHeight(): number {
+    const _traverse = (tree: Tree<E>): number => {
+      let max = 0
+      if(Array.isArray(tree.children)) {
+        tree.children.forEach(item => {
+          max = Math.max(max, _traverse(item))
+        })
+      }
+      return max + 1
+    }
+
+    return _traverse(this)
+  }
+
+  getDepth(): number {
+    let depth = 0
+    let cur: Tree<E> | undefined;
+    cur = this;
+    while(cur) {
+      depth++
+      cur = cur.parent
+    }
+
+    return depth
+  }
+
+  preOrderTraversal(): Tree<E>[] {
+    const list = []
+    const preOrder = (tree: Tree<E>) => {
+      list.push(tree) // before forEach children
+      if (Array.isArray(tree.children)) {
+        tree.children.forEach(item => {
+          preOrder(item)
+        })
+      }
+    }
+    preOrder(this)
+    return list
+  }
+
+  postOrderTraversal(): Tree<E>[] {
+    const list = []
+    const postOrder = (tree: Tree<E>) => {
+      if (Array.isArray(tree.children)) {
+        tree.children.forEach(item =>{
+          postOrder(item)
+        })
+      }
+      list.push(tree) // after forEach children
+    }
+    postOrder(this)
+    return list
+  }
+
+  // levelOrderTraversal(): Tree<E>[] {
+  //
+  //
+  // }
+
+
 
 
 

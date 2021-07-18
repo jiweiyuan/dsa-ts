@@ -5,7 +5,7 @@
 
 
 import { Stack } from './Stack'
-// TODO: do you understand Stack generic Item?
+// TODO: do you understand Stack generic Item? 表示一致
 export default class StackArray<Item> implements Stack<Item> {
   private items: Item[]
   constructor(iterable?: Iterable<Item>) {
