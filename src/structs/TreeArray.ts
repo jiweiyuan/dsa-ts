@@ -153,14 +153,25 @@ export default class TreeArray<E> implements Tree<E> {
     return list
   }
 
-  // levelOrderTraversal(): Tree<E>[] {
-  //
-  //
-  // }
+  levelOrderTraversal(): Tree<E>[] {
+    const levelOrder = (tree: Tree<E>): Tree<E>[] => {
+      const result: Tree<E> [] = []
 
+      const queue: Tree<E> [] = []
+      queue.push(tree)
 
+      while(queue.length) {
+        const current: Tree<E> = queue.shift()
+        result.push(current)
+        if (Array.isArray(current.children)) {
+          current.children.forEach(item => {
+            queue.push(item)
+          })
+        }
+      }
 
-
-
-
+      return result
+    }
+    return levelOrder(this)
+  }
 }

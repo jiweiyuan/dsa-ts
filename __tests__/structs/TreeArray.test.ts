@@ -79,10 +79,10 @@ describe('TreeArray', () => {
   it('traversal', () => {
     const postOrderResult = [tree1, tree2, tree3, tree, sibling, parent]
     const preOrderResult = [parent, tree, tree1, tree2, tree3, sibling]
-    // const levelOrderResult = [parent, tree, sibling, tree1, tree2, tree3]
+    const levelOrderResult = [parent, tree, sibling, tree1, tree2, tree3]
     expect(parent.postOrderTraversal()).toEqual(postOrderResult)
     expect(parent.preOrderTraversal()).toEqual(preOrderResult)
+    expect(parent.levelOrderTraversal()).toEqual(levelOrderResult)
   });
-
 
 })
