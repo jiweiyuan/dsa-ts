@@ -7,7 +7,7 @@ export default class TreeArray<E> implements Tree<E> {
   public value: E
   public parent: Tree<E> | undefined
   public children: Array<Tree<E>> | undefined
-  readonly nextSibling?: Tree<E> | undefined
+  public nextSibling?: Tree<E> | undefined
   public lastChild?: Tree<E> | undefined = undefined
 
   constructor(
@@ -45,7 +45,6 @@ export default class TreeArray<E> implements Tree<E> {
     this.children.push(child)
     this.lastChild = this.children[this.children.length - 1]
   }
-
 
   addChildren(children: Iterable<Tree<E>>) {
     for (const item of children) {

@@ -32,6 +32,7 @@ describe('TreeArray', () => {
     expect(tree.parent).toEqual(parent)
     expect(tree.children).toEqual([tree1, tree2, tree3])
     expect(tree.nextSibling).toEqual(sibling)
+    expect(parent.isRoot()).toBeTruthy()
   })
 
   it('set and get value', () => {
@@ -59,15 +60,31 @@ describe('TreeArray', () => {
     tree.removeChild(tree2)
     expect(tree.contains(tree2)).toBeFalsy()
     expect(tree1.getNextSibling()).toEqual(tree3)
+    tree.removeChild(tree3)
+    tree.removeChild(tree1)
+    expect(tree.getSize()).toBe(1)
+
   })
 
+  it('getParent', () => {
+    expect(tree.getParent()).toBe(parent)
+  })
+
+  it('getNextSibling', () => {
+    expect(tree.getNextSibling()).toBe(sibling)
+  })
+
+
   it('getSize', () => {
-    // let tree11 = new TreeArray(11)
     expect(parent.getSize()).toBe(6)
+    expect(tree.getSize()).toBe(4)
+    expect(sibling.getSize()).toBe(1)
   });
 
   it('getHeight', () => {
     expect(parent.getHeight()).toBe(3)
+    expect(tree.getHeight()).toBe(2)
+    expect(sibling.getHeight()).toBe(1)
   })
 
   it('getDepth', () => {
@@ -75,6 +92,7 @@ describe('TreeArray', () => {
     expect(tree.getDepth()).toBe(2)
     expect(tree1.getDepth()).toBe(3)
   })
+
 
   it('traversal', () => {
     const postOrderResult = [tree1, tree2, tree3, tree, sibling, parent]
