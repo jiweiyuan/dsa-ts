@@ -32,11 +32,11 @@ export default class TreeArray<E> implements Tree<E> {
     return this.value
   }
 
-  setValue(value: E) {
+  setValue(value: E): void {
     this.value = value
   }
 
-  addChild(child: Tree<E>) {
+  addChild(child: Tree<E>): void {
     child.parent = this
 
     if (this.lastChild) {
@@ -46,7 +46,7 @@ export default class TreeArray<E> implements Tree<E> {
     this.lastChild = this.children[this.children.length - 1]
   }
 
-  addChildren(children: Iterable<Tree<E>>) {
+  addChildren(children: Iterable<Tree<E>>): void {
     for (const item of children) {
       this.addChild(item)
     }
@@ -68,7 +68,7 @@ export default class TreeArray<E> implements Tree<E> {
     return this.nextSibling
   }
 
-  removeChild(child: Tree<E>) {
+  removeChild(child: Tree<E>): void {
     const deleteIndex = this.children.indexOf(child)
     this.children.splice(deleteIndex, 1)
     if (deleteIndex > 0 && deleteIndex < this.children.length) {

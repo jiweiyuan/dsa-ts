@@ -4,24 +4,20 @@
 
 export interface BinTree<E> {
   value: E | undefined
-  size: number
-  height: number
-  depth: number
-  parent: BinTree<E>
-  left: BinTree<E>
-  right: BinTree<E>
+  parent: BinTree<E> | undefined
+  left: BinTree<E> | undefined
+  right: BinTree<E> | undefined
 
-  setLeft(tree: BinTree<E>):void
-  getLeft(): BinTree<E>
+  get size(): number
+  get height(): number
+  get depth(): number
 
-  setRight(tree: BinTree<E>):void
-  getRight(): BinTree<E>
+  updateDepth(): void
+  updateSize(): void
+  updateHeight(): void
 
-  setParent(tree: BinTree<E>):void
-  getParent(): BinTree<E>
-
-  preOrderTraversal(): Iterable<BinTree<E>>
-  inOrderTraversal(): Iterable<BinTree<E>>
-  postOrderTraversal(): Iterable<BinTree<E>>
-  levelOrderTraversal(): Iterable<BinTree<E>>
+  preOrderTraversal?(): Iterable<BinTree<E>>
+  inOrderTraversal?(): Iterable<BinTree<E>>
+  postOrderTraversal?(): Iterable<BinTree<E>>
+  levelOrderTraversal?(): Iterable<BinTree<E>>
 }
