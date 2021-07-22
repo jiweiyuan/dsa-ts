@@ -31,14 +31,18 @@ Data Structures and Algorithms library in TypeScript
     - [x] *QueueList* using SinglyLinkedList
     - [x] *DequeList* using DoublyLinkedList
 
-- [ ] **Tree**
-  - [ ] TreeLinkedList
-  - [ ] TreeArray
+- [x] **Tree**
+  - [x] *TreeArray* using native Array
+
+- [x] **BinTree**
+  - [x] *BinTreeNode* using Node model
   
 - [ ] PriorityQueue
+  
 - [ ] Heap
+  
 - [ ] HashTable
-- [ ] Tree
+  
 - [ ] Graph
 
 #### Algorithms
@@ -64,8 +68,6 @@ Data Structures and Algorithms library in TypeScript
 npm install
 npm run test
 ```
-
-
 
 ## Reference
 

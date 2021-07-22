@@ -69,24 +69,97 @@ export default class BinTreeNode<E> implements BinTree<E>{
   updateSize(): void {
     const leftChildSize: number = this.left ? this.left.size : 0
     const rightChildSize: number = this.right ? this.right.size : 0
-    this._size = Math.max(leftChildSize + 1, rightChildSize + 1)
+    this._size = leftChildSize + rightChildSize + 1
 
     if (this.parent) this.parent.updateSize()
   }
 
   updateHeight(): void {
-    const leftChildHeight: number = this.left ? this.left.height : 0
-    const rightChildHeight: number = this.right ? this.right.height : 0
+    const leftChildHeight: number = this.left ? this.left.height : -1
+    const rightChildHeight: number = this.right ? this.right.height : -1
     this._height = Math.max(leftChildHeight + 1, rightChildHeight + 1)
 
     if (this.parent) this.parent.updateHeight()
   }
 
   updateDepth(): void {
-    const parentDepth: number = this.parent ? this.parent.depth : 0
+    const parentDepth: number = this.parent ? this.parent.depth : -1
     this._depth = parentDepth + 1
 
     if (this.left) this.left.updateDepth()
     if (this.right) this.right.updateDepth()
+  }
+
+  preOrderTraversal(): Iterable<BinTree<E>> {
+    const res: BinTree<E>[] = []
+    const stack: BinTree<E>[] = [this]
+
+    while (stack.length) {
+      const cur = stack.pop()
+      res.push(cur)
+
+      if (cur.right) {
+        stack.push(cur.right)
+      }
+      if (cur.left) {
+        stack.push(cur.left)
+      }
+    }
+
+    return res
+  }
+
+  postOrderTraversal(): Iterable<BinTree<E>> {
+    const res: BinTree<E>[] = []
+    const stack: BinTree<E>[] = [this]
+
+    while (stack.length) {
+      const cur = stack.pop()
+      res.push(cur)
+
+      if (cur.left) {
+        stack.push(cur.left)
+      }
+      if (cur.right) {
+        stack.push(cur.right)
+      }
+    }
+
+    return res.reverse()
+  }
+
+  inOrderTraversal(): Iterable<BinTree<E>> {
+    const res: BinTree<E>[] = []
+    const stack: BinTree<E>[] = []
+    let cur: BinTree<E> | undefined;
+    cur = this;
+
+    while (cur || stack.length) {
+      while (cur) {
+        stack.push(cur)
+        cur = cur.left
+      }
+
+      cur = stack.pop()
+      res.push(cur)
+      cur = cur.right
+    }
+
+    return res
+  }
+
+  levelOrderTraversal(): Iterable<BinTree<E>> {
+    const res: BinTree<E>[] = []
+    const queue: BinTree<E>[] = [this]
+
+    while (queue.length) {
+      const cur = queue.shift()
+      res.push(cur)
+
+      if (cur.left) queue.push(cur.left)
+      if (cur.right) queue.push(cur.right)
+    }
+
+    return res
   }
 }
