@@ -1,9 +1,10 @@
 import {BinTree} from './BinTree'
 
+/**
+ * More JS Styles
+ */
+
 export default class BinTreeNode<E> implements BinTree<E>{
-  /**
-   * More JS Styles
-   */
 
   public value: E | undefined
   private _left: BinTree<E> | undefined
@@ -88,6 +89,4 @@ export default class BinTreeNode<E> implements BinTree<E>{
     if (this.left) this.left.updateDepth()
     if (this.right) this.right.updateDepth()
   }
-
-
 }
